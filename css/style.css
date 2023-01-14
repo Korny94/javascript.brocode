@@ -1,0 +1,58 @@
+#desiredColor {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 100px;
+}
+
+#radioButtons {
+    float: left;
+}
+
+input[type=radio],
+button {
+    cursor: pointer;
+}
+
+#correctSky,
+#incorrectGrass {
+    color: green;
+    display: none;
+}
+
+#incorrectSky,
+#correctGrass {
+    color: red;
+    display: none;
+}
+
+#designLogo {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-weight: 900;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 200px;
+    border: 10px solid black;
+    background-color: black;
+}
+
+#inputLetter {
+    width: 40px;
+}
+
+input[type=color] {
+    height: 21px;
+}
+
+#logoDesign {
+    display: flex;
+    align-items: center;
+}
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet">
+    <script defer src="/js/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="name">
+        <label id="myLabel">Enter your name:</label>
+        <br> <br>
+        <input type="text" id="myText">
+        <br><br>
+        <button type="submit" id="submit">Submit</button>
+    </section>
+    <br>
+    <section class="paragraphs">
+        <p id="p1">
+
+        </p>
+        <p id="p2">
+    
+        </p>
+        <p id="p3">
+    
+        </p>
+    </section>
+    <br> <br>
+    <section id="hypothenus">
+        <label>Calculate the hypothenus</label>
+        <br> <br>
+        <label id="inputA">Input a:</label>
+        <input id="textInputA" type="text">
+        <!-- <button type="submit" id="submitA">Submit</button> -->  
+        <br> <br>
+        <label id="inputB">Input b:</label>
+        <input id="textInputB" type="text">
+        <!-- <button type="submit" id="submitB">Submit</button> -->
+        <br> <br>
+        <button type="submit" id="calculateC">Calculate c</button> <br> <br>
+        <label id="resultC">Hypothenus c: </label>
+    </section>
+    <br> <br>
+    <section>
+        <p>Which color do you want the circle to be?</p>
+        <div id="radioButtons">
+            <label for="blue">Blue</label>
+            <input type="radio" value="blue" name="desiredColor" id="radioBlue">
+            <br><br>
+            <label for="red">Red</label>
+            <input type="radio" name="desiredColor" value="red" id="radioRed">
+            <br><br>
+            <label for="green">Green</label>
+            <input type="radio" name="desiredColor" value="green" id="radioGreen">
+        </div>
+        <div id="desiredColor">
+        </div>
+    </section>
+    <br><br>
+    <section>
+        <b>True or False</b>
+        <p>The sky is blue</p>
+        <label for="blueSky">True</label>
+        <input type="radio" name="blueSky" id="blueSkyTrue" value="true">
+        <label for="blueSky">False</label>
+        <input type="radio" name="blueSky" id="blueSkyFalse" value="false">
+        <p id="blueSkyResult">Result: <span id="correctSky">Correct!</span><span id="incorrectSky">Inorrect!</span></p>
+        <p>The grass is red</p>
+        <label for="redGrass">True</label>
+        <input type="radio" name="redGrass" id="redGrassTrue" value="true">
+        <label for="redGrass">False</label>
+        <input type="radio" name="redGrass" id="redGrassFalse" value="false">
+        <p id="redGrassResult">Result: <span id="incorrectGrass">Correct!</span><span id="correctGrass">Inorrect!</span></p>
+    </section>
+    <br><br>
+    <section id="logoDesign">
+        <div id="radioButtons">
+            <b>Design your own logo</b>
+            <p>Choose a background color:</p>
+            <input type="color" id="backgroundColor">
+            <button type="submit" id="submitBGColor">Submit</button>
+            <br>
+            <p>Choose a border:</p>
+            <label for="borderType">Solid</label>
+            <input type="radio" name="borderType" id="borderTypeSolid" value="solid" checked="checked">
+            <br>
+            <label for="borderType">Dashed</label>
+            <input type="radio" name="borderType" id="borderTypeDashed" value="dashed">
+            <br>
+            <label for="borderType">Dotted</label>
+            <input type="radio" name="borderType" id="borderTypeDotted" value="dotted">
+            <br>
+            <p>Choose a border color:</p>
+            <input type="color" id="borderColor">
+            <button type="submit" id="submitBorderColor">Submit</button>
+            <p>Choose a letter:</p>
+            <input type="text" id="inputLetter">
+            <button type="submit" id="submitInputLetter">Submit</button>
+            <p>Choose a letter color:</p>
+            <input type="color" id="letterColor">
+            <button type="submit" id="submitLetterColor">Submit</button>
+        </div>
+        <div id="designLogo">
+        </div>
+    </section>
+    <section id="calculator">
+        
+    </section>
+</body>
+</html>
