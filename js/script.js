@@ -564,3 +564,272 @@ Operator    Description                 Example     Result
 // CALCULATOR 
 
     // HTML
+
+    /*
+    <section id="calculator">
+        <div id="screen">
+
+        </div>
+        <input type="text" id="inputScreen">
+        <div id="numbers">
+            <button type="button" id="clear">C</button>
+            <button type="button" id="remainder">%</button>
+            <button type="button" id="division">/</button>
+            <button type="button" id="multiplication">x</button>
+            <br>
+            <button type="button" id="seven">7</button>
+            <button type="button" id="eight">8</button>
+            <button type="button" id="nine">9</button>
+            <button type="button" id="subtraction">-</button>
+            <br>
+            <button type="button" id="four">4</button>
+            <button type="button" id="five">5</button>
+            <button type="button" id="six">6</button>
+            <button type="button" id="addition">+</button>
+            <br>
+            <button type="button" id="one">1</button>
+            <button type="button" id="two">2</button>
+            <button type="button" id="three">3</button>
+            <button type="button" id="comma">,</button>
+            <br>
+            <button type="button" id="zero">0</button>
+            <button type="button" id="equals">=</button>
+        </div>
+    </section>
+    */
+
+    // JavaScript
+
+    const one = 1;
+    const two = 2;
+    const three = 3;
+    const four = 4;
+    const five = 5;
+    const six = 6;
+    const seven = 7;
+    const eight = 8;
+    const nine = 9;
+    const zero = 0; 
+    const clear = "";
+    const remainder = "%";
+    const division = "/";
+    const multiplication = "*";
+    const subtraction = "-";
+    const addition = "+";
+    const comma = ".";
+    const leftParenthesis = "(";
+    const rightParenthesis = ")";
+    let result;
+
+    document.getElementById("one").onclick = function() {
+
+       document.getElementById("screen").innerHTML += one;
+    }
+
+    document.getElementById("two").onclick = function() {
+
+        document.getElementById("screen").innerHTML += two;
+     }
+
+     document.getElementById("three").onclick = function() {
+
+        document.getElementById("screen").innerHTML += three;
+     }
+
+     document.getElementById("four").onclick = function() {
+
+        document.getElementById("screen").innerHTML += four;
+     }
+
+     document.getElementById("five").onclick = function() {
+
+        document.getElementById("screen").innerHTML += five;
+     }
+
+     document.getElementById("six").onclick = function() {
+
+        document.getElementById("screen").innerHTML += six;
+     }
+
+     document.getElementById("seven").onclick = function() {
+
+        document.getElementById("screen").innerHTML += seven;
+     }
+
+     document.getElementById("eight").onclick = function() {
+
+        document.getElementById("screen").innerHTML += eight;
+     }
+
+     document.getElementById("nine").onclick = function() {
+
+        document.getElementById("screen").innerHTML += nine;
+     }
+
+     document.getElementById("zero").onclick = function() {
+
+        document.getElementById("screen").innerHTML += zero;
+     }
+
+     document.getElementById("comma").onclick = function() {
+
+        document.getElementById("screen").innerHTML += comma;
+     }
+
+     document.getElementById("clear").onclick = function() {
+
+        document.getElementById("screen").innerHTML = clear;
+     }
+
+     document.getElementById("remainder").onclick = function() {
+
+        document.getElementById("screen").innerHTML += remainder;
+     }
+
+     document.getElementById("division").onclick = function() {
+
+        document.getElementById("screen").innerHTML += division;
+     }
+
+     document.getElementById("multiplication").onclick = function() {
+
+        document.getElementById("screen").innerHTML += multiplication;
+     }
+
+     document.getElementById("subtraction").onclick = function() {
+
+        document.getElementById("screen").innerHTML += subtraction;
+     }
+
+     document.getElementById("addition").onclick = function() {
+
+        document.getElementById("screen").innerHTML += addition;
+     }
+
+     document.getElementById("leftParenthesis").onclick = function() {
+
+        document.getElementById("screen").innerHTML += leftParenthesis;
+     }
+
+     document.getElementById("rightParenthesis").onclick = function() {
+
+        document.getElementById("screen").innerHTML += rightParenthesis;
+     }
+
+     document.getElementById("equals").onclick = function() {
+
+        result = document.getElementById("screen").innerText;
+        result = eval(result);
+        result = result.toString();
+        console.log(result.length)
+        if (result.length > 7) {
+            console.log("more")
+            result = Number(result);
+            document.getElementById("screen").innerHTML = result.toPrecision(7);
+        } else {
+            console.log("less")
+            result = Number(result);
+            document.getElementById("screen").innerHTML = result;
+        }
+     }
+
+
+
+// Which animal are you?
+
+     // HTML
+
+    /*
+    <section id="sectionWhichAnimal">
+        <b>Which animal are you?</b>
+        <br><br>
+        <label for="whichAnimal" id="whichAnimal">Type in your name to find out:</label>
+        <div>
+            <img src="/images/haley.PNG" id="imgAnimalLion">
+            <img src="/images/pappa.PNG" id="imgAnimalTiger">
+            <img src="/images/victoria.PNG" id="imgAnimalPanda">
+            <img src="/images/oskar.PNG" id="imgAnimalFrog">
+            <img src="/images/mommo.PNG" id="imgAnimalCow">
+            <img src="/images/hals.PNG" id="imgAnimalPig">
+            <img src="/images/renate.PNG" id="imgAnimalKoala">
+            <img src="/images/mamma.PNG" id="imgAnimalZebra">
+            <img src="/images/question.PNG" id="imgAnimalQuestion">
+        </div>
+        <input type="text" name="whichAnimal" id="inputNameAnimal">
+    </section>
+    */
+
+
+     // JavaScript
+
+     let inputNameAnimal;
+
+     document.getElementById("resetNameAnimal").onclick = function() {
+
+        document.getElementById("imgAnimalLion").style.display = "none";
+        document.getElementById("imgAnimalTiger").style.display = "none";
+        document.getElementById("imgAnimalCow").style.display = "none";
+        document.getElementById("imgAnimalPanda").style.display = "none";
+        document.getElementById("imgAnimalFrog").style.display = "none";
+        document.getElementById("imgAnimalPig").style.display = "none";
+        document.getElementById("imgAnimalKoala").style.display = "none";
+        document.getElementById("imgAnimalZebra").style.display = "none";
+        document.getElementById("imgAnimalQuestion").style.display = "block";
+        document.getElementById("whichAnimal").innerHTML = "Type in your name to find out:";
+     }
+
+     document.getElementById("submitNameAnimal").onclick = function() {
+
+        inputNameAnimal = document.getElementById("inputNameAnimal").value;
+        inputNameAnimal = inputNameAnimal.toLowerCase();
+        if (inputNameAnimal === "haley" || inputNameAnimal === "isabel") {
+            document.getElementById("imgAnimalLion").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "pappa" || inputNameAnimal === "karl" || inputNameAnimal === "karl magnus") {
+            document.getElementById("imgAnimalTiger").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "mommo" || inputNameAnimal === "inger" || inputNameAnimal === "inger lill" || inputNameAnimal === "inger-lill") {
+            document.getElementById("imgAnimalCow").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "victoria" || inputNameAnimal === "tante" || inputNameAnimal === "tante victoria" || inputNameAnimal === "tante toria" || inputNameAnimal === "toria") {
+            document.getElementById("imgAnimalPanda").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "oskar" || inputNameAnimal === "onkel" || inputNameAnimal === "onkel oskar" || inputNameAnimal === "osk" || inputNameAnimal === "oskis") {
+            document.getElementById("imgAnimalPanda").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "hals" || inputNameAnimal === "onkel hals" || inputNameAnimal === "onkel hans" || inputNameAnimal === "hans" || inputNameAnimal === "hansebass") {
+            document.getElementById("imgAnimalPig").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "renate" || inputNameAnimal === "tante renate" || inputNameAnimal === "per ole" || inputNameAnimal === "per" || inputNameAnimal === "ole") {
+            document.getElementById("imgAnimalKoala").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else if (inputNameAnimal === "mamma" || inputNameAnimal === "elsa" || inputNameAnimal === "chibssa" || inputNameAnimal === "idossa" || inputNameAnimal === "finbak") {
+            document.getElementById("imgAnimalZebra").style.display = "block";
+            document.getElementById("imgAnimalQuestion").style.display = "none";
+            document.getElementById("whichAnimal").innerHTML = "You are a:";
+        } else {
+            document.getElementById("imgAnimalLion").style.display = "none";
+            document.getElementById("imgAnimalTiger").style.display = "none";
+            document.getElementById("imgAnimalCow").style.display = "none";
+            document.getElementById("imgAnimalPanda").style.display = "none";
+            document.getElementById("imgAnimalFrog").style.display = "none";
+            document.getElementById("imgAnimalPig").style.display = "none";
+            document.getElementById("imgAnimalKoala").style.display = "none";
+            document.getElementById("imgAnimalZebra").style.display = "none";
+            document.getElementById("imgAnimalQuestion").style.display = "block";
+            document.getElementById("whichAnimal").innerHTML = "Type in your name to find out:";
+        }
+     }
+
+
+
+
+
+// Design your own website

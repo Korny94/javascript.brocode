@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style2.css" rel="stylesheet">
+    <script defer src="/js/script2.js"></script>
+    <title>Design own Website!</title>
+</head>
+<body id="body">
+    <section id="mainPage">
+        <header id="header">
+        </header>
+        <main id="main">
+
+        </main>
+        <footer id="footer">
+
+        </footer>
+    </section>
+    <section id="choices" class="header">
+        <div id="divFlex">
+            <label for="headerBackground" id="labelHeaderBG">Choose a background for your header:</label>
+            <div>
+                <label for="headerBackgroundColor" id="labelHeaderBG">Color:</label>
+                <input type="color" name="headerBackgroundColor" id="headerBGC">
+            </div>
+            <div>
+                <label for="headerBackgroundColor" id="labelHeaderBG">Image:</label>
+                <input type="file" name="headerBackgroundImage" id="headerBGI">
+            </div>
+        </div>
+        <hr>
+        <div id="divFlex">
+            <label for="headerBorder" id="labelHeaderBorder">Choose a border for your header:</label>
+            <div>
+                <label for="headerBorderColor" id="labelHeaderBC">Color:</label>
+                <input type="color" name="headerBorderColor" id="headerBorderColor">
+            </div>
+            <div>
+                <label for="headerBorder" id="labelHeaderBorder">None</label>
+                <input type="radio" name="headerBorder" id="headerBorderNone">
+                <label for="headerBorder" id="labelHeaderBorder">Solid</label>
+                <input type="radio" name="headerBorder" id="headerBorderSolid">
+                <label for="headerBorder" id="labelHeaderBorder">Dashed</label>
+                <input type="radio" name="headerBorder" id="headerBorderDashed">
+                <label for="headerBorder" id="labelHeaderBorder">Dotted</label>
+                <input type="radio" name="headerBorder" id="headerBorderDotted">
+                <br>
+                <label for="headerBorderWidth" id="labelHeaderBorderWidth">Border width</label>
+                <input type="range" name="headerBorderWidth" id="headerBorderWidth" min="0" max="10" value="5">
+            </div>
+        </div>
+        <hr>
+        <div id="divFlex">
+            <label for="headerHeight" id="labelHeaderHeight">Choose a height for your header:</label>
+            <input type="range" name="headerHeight" id="headerHeight" min="10" max="30" value="20">
+        </div>
+        <hr>
+        <div id="divFlex">
+            <label for="headerLogo" id="labelHeaderLogo">Choose a logo for your header:</label>
+            <input type="file" name="headerLogo" id="headerLogo">
+        </div>
+        <hr>
+        <div id="divFlex">
+            <label for="headerButtons" id="labelHeaderButtons">Choose buttons for your header:</label>
+            <input type="text" name="headerButtons" id="headerButtons">
+            <input type="submit" name="submitButtons" id="submitButtons" value="Add button">
+        </div>
+        <!--header height, header border,  header buttons, upload logo image, logo size, upload background img-->
+    </section>
+    <!--
+    <section id="choices" class="main">
+
+    </section>
+    <section id="choices" class="footer">
+        
+    </section>
+    -->
+</body>
+</html>

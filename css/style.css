@@ -1,3 +1,7 @@
+#myText {
+    width: 100px;
+}
+
 #desiredColor {
     width: 100px;
     height: 100px;
@@ -55,4 +59,100 @@ input[type=color] {
     align-items: center;
 }
 
+#calculator {
+    margin-left: 1rem;
+    background-color: #b5a5ff2b;
+    padding: .5rem;
+    padding-top: 1rem;
+    width: fit-content;
+    border: 2px solid rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+#screen {
+    background-color: #e2eaf3;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: .4rem;
+    margin-bottom: .5rem;
+    width: 255px;
+    height: 50px;
+    border: 1px solid black;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    object-fit: contain;
+    box-shadow: 0px -1px 2px 1px rgb(77, 77, 77, 0.5);
+    padding-right: .5rem;
+}
+
+#screen::-webkit-scrollbar { 
+    display: none;
+    }
+
+#numbers * {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 2px 6px 0px rgb(0, 0, 0, 0.3);
+    margin: .5rem;
+    width: 50px;
+    height: 40px;
+}
+
+#numbers *:hover {
+    background-color: rgb(164, 164, 164);
+    color: white;
+}
+
+#sectionWhichAnimal {
+    height: 250px;
+}
+
+#imgAnimalLion,
+#imgAnimalTiger,
+#imgAnimalZebra,
+#imgAnimalFrog,
+#imgAnimalKoala,
+#imgAnimalPanda,
+#imgAnimalCow,
+#imgAnimalPig
+ {
+    display: none;
+    position: absolute;
+    margin-left: 2rem; 
+    margin-top: 0rem;
+    z-index: 0;
+}
+
+#imgAnimalQuestion {
+    width: 4rem;
+    margin-left: 3rem;
+    margin-top: .7rem;
+    position: absolute;
+}
+
+#inputNameAnimal {
+    margin-top: 6.5rem;
+    position: absolute;
+    z-index: 2;
+    width: 90px;
+}
+
+#submitNameAnimal {
+    position: absolute;
+    margin-top: 6.5rem;
+    margin-left: 6.5rem;
+    z-index: 3;
+}
+
+#resetNameAnimal {
+    position: absolute;
+    margin-top: 6.5rem;
+    margin-left: 10.5rem;
+    z-index: 3;
+}
 

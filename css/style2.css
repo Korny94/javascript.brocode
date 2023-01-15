@@ -1,0 +1,80 @@
+#body {
+    display: flex;
+    height: 97vh;
+    margin: 0rem;
+    padding: 0;
+}
+
+#mainPage {
+    width: 100vw;
+    height: 76.5vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+#choices {
+    white-space: nowrap;
+    display: flex;
+    background-color: beige;
+    height: 23vh;
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+#divFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+input[type=file] {
+    width: 100px;
+}
+
+#labelHeaderBorder {
+    padding-left: .8rem;
+}
+
+#headerBorderWidth {
+    margin-left: 1.5rem;
+}
+
+#headerHeight,
+#headerLogo {
+    margin-bottom: 1rem;
+    width: 150px;
+}
+
+#body::-webkit-scrollbar { 
+    display: none;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    border: 1px solid black;
+    object-fit: cover;
+    background-size: contain;
+}
+
+#main {
+    height: 50vh;
+    border: 1px solid blue;
+}
+
+#footer {
+    height: 6vh;
+    border: 1px solid green;
+}
+
+input {
+    cursor: pointer;
+}
