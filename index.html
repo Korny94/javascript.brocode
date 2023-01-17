@@ -10,8 +10,7 @@
 </head>
 <body>
     <section class="name">
-        <label id="myLabel">Enter your name:</label>
-        <br> <br>
+        <h2 id="myLabel">Enter your name:</h2>
         <input type="text" id="myText">
         <br><br>
         <button type="submit" id="submit">Submit</button>
@@ -28,10 +27,10 @@
     
         </p>
     </section>
-    <br> <br>
+    <br><br>
+    <br><br>
     <section id="hypothenus">
-        <label>Calculate the hypothenus</label>
-        <br> <br>
+        <h2>Calculate the hypothenus</h2>
         <label id="inputA">Input a:</label>
         <input id="textInputA" type="text">
         <!-- <button type="submit" id="submitA">Submit</button> -->  
@@ -43,9 +42,10 @@
         <button type="submit" id="calculateC">Calculate c</button> <br> <br>
         <label id="resultC">Hypothenus c: </label>
     </section>
-    <br> <br>
+    <br><br>
+    <br><br>
     <section>
-        <p>Which color do you want the circle to be?</p>
+        <h2>Which color do you want the circle to be?</h2>
         <div id="radioButtons">
             <label for="blue">Blue</label>
             <input type="radio" value="blue" name="desiredColor" id="radioBlue">
@@ -60,8 +60,9 @@
         </div>
     </section>
     <br><br>
+    <br><br>
     <section>
-        <b>True or False</b>
+        <h2>True or False</h2>
         <p>The sky is blue</p>
         <label for="blueSky">True</label>
         <input type="radio" name="blueSky" id="blueSkyTrue" value="true">
@@ -76,12 +77,12 @@
         <p id="redGrassResult">Result: <span id="incorrectGrass">Correct!</span><span id="correctGrass">Inorrect!</span></p>
     </section>
     <br><br>
+    <br><br>
     <section id="logoDesign">
         <div id="radioButtons">
-            <b>Design your own logo</b>
+            <h2>Design your own logo</h2>
             <p>Choose a background color:</p>
             <input type="color" id="backgroundColor">
-            <button type="submit" id="submitBGColor">Submit</button>
             <br>
             <p>Choose a border:</p>
             <label for="borderType">Solid</label>
@@ -95,18 +96,17 @@
             <br>
             <p>Choose a border color:</p>
             <input type="color" id="borderColor">
-            <button type="submit" id="submitBorderColor">Submit</button>
             <p>Choose a letter:</p>
             <input type="text" id="inputLetter">
-            <button type="submit" id="submitInputLetter">Submit</button>
             <p>Choose a letter color:</p>
             <input type="color" id="letterColor">
-            <button type="submit" id="submitLetterColor">Submit</button>
         </div>
         <div id="designLogo">
         </div>
     </section>
     <br><br>
+    <br><br>
+    <h2>Calculator</h2>
     <section id="calculator">
         <div id="screen">
 
@@ -139,6 +139,7 @@
         </div>
     </section>
     <br><br>
+    <br><br>
     <section id="sectionWhichAnimal">
         <b>Which animal are you?</b>
         <br><br>
@@ -158,11 +159,82 @@
         <button type="submit" id="submitNameAnimal">Submit</button>
         <button type="reset" id="resetNameAnimal">Reset</button>
     </section>
+    <br><br>
+    <br><br>
     <section>
         <b>Design your own website</b>
         <a href="/html/ownWeb.html">
             <button type="button">Click here!</button>
         </a>
+    </section>
+        <br><br>
+        <br><br>
+    <section>
+        <h2>Enter a number!</h2>
+        <input type="number" id="counterInput">
+        <button type="button" name="counter" id="counterButton">Count!</button>
+        <br><br>
+        <label for="counter" id="counterLabel">Counter:</label>
+    </section>
+    <br><br>
+    <br><br>
+    <section>
+        <h2>Click Counter</h2>
+        <button type="button" name="clickCounter" id="clickButton">Click!</button>
+        <label for="clickCounter" id="clickLabel">0</label>
+    </section>
+    <br><br>
+    <br><br>
+    <section>
+        <h2>Letter Counter</h2>
+        <input type="text" name="letterCounter" id="letterInput">
+        <label for="letterCounter" id="letterLabel">0</label>
+        <br><br>
+        <button id="resetLetterCounter">Reset</button>
+    </section>
+    <br><br>
+    <br><br>
+    <section>
+        <h2>What's your Zodiac sign?</h2>
+        <b>Pick your birthday-range:</b>
+        <br><br>
+        <label for="birthday">January 20 - February 18</label>
+        <input type="radio" name="birthday" id="birthday1">
+        <br>
+        <label for="birthday">February 19 - March 20</label>
+        <input type="radio" name="birthday" id="birthday2">
+        <br>
+        <label for="birthday">March 21 - April 19</label>
+        <input type="radio" name="birthday" id="birthday3">
+        <br>
+        <label for="birthday">April 20 - May 20</label>
+        <input type="radio" name="birthday" id="birthday4">
+        <br>
+        <label for="birthday">May 21 - June 20</label>
+        <input type="radio" name="birthday" id="birthday5">
+        <br>
+        <label for="birthday">June 21 - July 22</label>
+        <input type="radio" name="birthday" id="birthday6">
+        <br>
+        <label for="birthday">July 23 - August 22</label>
+        <input type="radio" name="birthday" id="birthday7">
+        <br>
+        <label for="birthday">August 23 - September 22</label>
+        <input type="radio" name="birthday" id="birthday8">
+        <br>
+        <label for="birthday">September 23 - October 22</label>
+        <input type="radio" name="birthday" id="birthday9">
+        <br>
+        <label for="birthday">Oktober 23 - November 21</label>
+        <input type="radio" name="birthday" id="birthday10">
+        <br>
+        <label for="birthday">November 22 - Desember 21</label>
+        <input type="radio" name="birthday" id="birthday11">
+        <br>
+        <label for="birthday">Desember 22 - January 19</label>
+        <input type="radio" name="birthday" id="birthday12">
+
+        <p id="zodiacResult">Your Zodiac sign is:</p>
     </section>
 </body>
 </html>

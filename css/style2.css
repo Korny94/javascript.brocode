@@ -59,7 +59,7 @@ input[type=file] {
 #header {
     display: flex;
     justify-content: space-between;
-    height: 20vh;
+    height: 19vh;
     border: 1px solid black;
     object-fit: cover;
     background-size: contain;

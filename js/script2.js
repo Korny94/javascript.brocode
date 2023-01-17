@@ -4,7 +4,7 @@ let headerBGC;
 
 let headerBGI;
 
-document.getElementById("headerBGC").onchange = function() {
+document.getElementById("headerBGC").oninput = function() {
 
     headerBGC = document.getElementById("headerBGC").value;
     document.getElementById("header").style.backgroundColor = headerBGC;
@@ -13,7 +13,7 @@ document.getElementById("headerBGC").onchange = function() {
 
 let headerBorderColor;
 
-document.getElementById("headerBorderColor").onchange = function() {
+document.getElementById("headerBorderColor").oninput = function() {
 
     headerBorderColor = document.getElementById("headerBorderColor").value;
     document.getElementById("header").style.borderColor = headerBorderColor;

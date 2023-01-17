@@ -194,7 +194,7 @@ Operator    Description                 Example     Result
             
         let username;
 
-        document.getElementById("submit").onclick = function() {
+        document.getElementById("myText").oninput = function() {
             
             username = document.getElementById("myText").value;
             document.getElementById("myLabel").innerHTML = "Hello " + username;
@@ -516,7 +516,7 @@ Operator    Description                 Example     Result
 
     let letterColor;
 
-    document.getElementById("submitBGColor").onclick = function() {
+    document.getElementById("backgroundColor").oninput = function() {
 
         backgroundColor = document.getElementById("backgroundColor").value;
         document.getElementById("designLogo").style.background = backgroundColor;
@@ -540,19 +540,19 @@ Operator    Description                 Example     Result
         document.getElementById("designLogo").style.borderWidth = "10px";
     }
 
-    document.getElementById("submitBorderColor").onclick = function() {
+    document.getElementById("borderColor").oninput = function() {
 
         borderColor = document.getElementById("borderColor").value;
         document.getElementById("designLogo").style.borderColor = borderColor;
     }
 
-    document.getElementById("submitInputLetter").onclick = function() {
+    document.getElementById("inputLetter").oninput = function() {
 
         inputLetter = document.getElementById("inputLetter").value;
         document.getElementById("designLogo").innerHTML = inputLetter;
     }
 
-    document.getElementById("submitLetterColor").onclick = function() {
+    document.getElementById("letterColor").oninput = function() {
 
         letterColor = document.getElementById("letterColor").value;
         document.getElementById("designLogo").style.color = letterColor;
@@ -785,35 +785,35 @@ Operator    Description                 Example     Result
         if (inputNameAnimal === "haley" || inputNameAnimal === "isabel") {
             document.getElementById("imgAnimalLion").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Lion:";
         } else if (inputNameAnimal === "pappa" || inputNameAnimal === "karl" || inputNameAnimal === "karl magnus") {
             document.getElementById("imgAnimalTiger").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Tiger:";
         } else if (inputNameAnimal === "mommo" || inputNameAnimal === "inger" || inputNameAnimal === "inger lill" || inputNameAnimal === "inger-lill") {
             document.getElementById("imgAnimalCow").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Cow:";
         } else if (inputNameAnimal === "victoria" || inputNameAnimal === "tante" || inputNameAnimal === "tante victoria" || inputNameAnimal === "tante toria" || inputNameAnimal === "toria") {
             document.getElementById("imgAnimalPanda").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Panda:";
         } else if (inputNameAnimal === "oskar" || inputNameAnimal === "onkel" || inputNameAnimal === "onkel oskar" || inputNameAnimal === "osk" || inputNameAnimal === "oskis") {
-            document.getElementById("imgAnimalPanda").style.display = "block";
+            document.getElementById("imgAnimalFrog").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Frog:";
         } else if (inputNameAnimal === "hals" || inputNameAnimal === "onkel hals" || inputNameAnimal === "onkel hans" || inputNameAnimal === "hans" || inputNameAnimal === "hansebass") {
             document.getElementById("imgAnimalPig").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Pig:";
         } else if (inputNameAnimal === "renate" || inputNameAnimal === "tante renate" || inputNameAnimal === "per ole" || inputNameAnimal === "per" || inputNameAnimal === "ole") {
             document.getElementById("imgAnimalKoala").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Koala:";
         } else if (inputNameAnimal === "mamma" || inputNameAnimal === "elsa" || inputNameAnimal === "chibssa" || inputNameAnimal === "idossa" || inputNameAnimal === "finbak") {
             document.getElementById("imgAnimalZebra").style.display = "block";
             document.getElementById("imgAnimalQuestion").style.display = "none";
-            document.getElementById("whichAnimal").innerHTML = "You are a:";
+            document.getElementById("whichAnimal").innerHTML = "You are a Zebra:";
         } else {
             document.getElementById("imgAnimalLion").style.display = "none";
             document.getElementById("imgAnimalTiger").style.display = "none";
@@ -832,4 +832,129 @@ Operator    Description                 Example     Result
 
 
 
-// Design your own website
+// Number Counter
+
+    let counterButton = document.getElementById("counterButton");
+
+    let counterLabel = document.getElementById("counterLabel");
+
+    let counterInput = document.getElementById("counterInput");
+
+    counterButton.onclick = function() {
+        for (let i = 0; i <= counterInput.value; i++) {
+            counterLabel.innerHTML += " " + i + " ";
+        }
+    }
+
+
+// Click Counter 
+
+let clickButton = document.getElementById("clickButton");
+
+let clickLabel = document.getElementById("clickLabel");
+
+let clicks = 0;
+
+
+clickButton.onclick = function() {
+    clicks += 1;
+    clickLabel.innerHTML = clicks;
+}
+
+
+// LETTER COUNTER
+
+let letterInput = document.getElementById("letterInput");
+
+let letterLabel = document.getElementById("letterLabel");
+
+let keys = 0;
+
+
+letterInput.oninput = function() {
+    keys += 1;
+    letterLabel.innerHTML = keys;
+}
+
+let resetLetterCounter = document.getElementById("resetLetterCounter");
+
+resetLetterCounter.onclick = function() {
+    letterLabel.innerHTML = keys = 0;
+}
+
+
+
+let Aquarius = document.getElementById("birthday1");
+
+let pisces = document.getElementById("birthday2");
+
+let aries = document.getElementById("birthday3");
+
+let taurus = document.getElementById("birthday4");
+
+let gemini = document.getElementById("birthday5");
+
+let cancer = document.getElementById("birthday6");
+
+let leo = document.getElementById("birthday7");
+
+let virgo = document.getElementById("birthday8");
+
+let libra = document.getElementById("birthday9");
+
+let scorpio = document.getElementById("birthday10");
+
+let sagittarius = document.getElementById("birthday11");
+
+let capricorn = document.getElementById("birthday12");
+
+let zodiacResult = document.getElementById("zodiacResult");
+
+
+Aquarius.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Aquarius"; 
+}
+
+pisces.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Pisces"; 
+}
+
+aries.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Aries"; 
+}
+
+taurus.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Taurus"; 
+}
+
+gemini.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Gemini"; 
+}
+
+cancer.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Cancer"; 
+}
+
+leo.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Leo"; 
+}
+
+virgo.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Virgo"; 
+}
+
+libra.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Libra"; 
+}
+
+scorpio.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Scorpio"; 
+}
+
+sagittarius.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Sagittarius"; 
+}
+
+capricorn.onclick = function() {
+    zodiacResult.innerHTML = "Your Zodiac sign is: Capricorn"; 
+}
