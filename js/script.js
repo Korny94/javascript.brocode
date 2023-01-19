@@ -91,13 +91,13 @@
 
 // EDIT HTML BY ID
 
-document.getElementById("p1").innerHTML = "Hello " + firstName; 
+    // document.getElementById("p1").innerHTML = "Hello " + firstName; 
 // Output in html: Hello karl magnus
 
-document.getElementById("p2").innerHTML = "You are " + age + " years old";
+// document.getElementById("p2").innerHTML = "You are " + age + " years old";
 // Output in html: You are 29 years old
 
-document.getElementById("p3").innerHTML = "It's " + isCool + " that you are cool"
+// document.getElementById("p3").innerHTML = "It's " + isCool + " that you are cool"
 // Output in html: It's true that you are cool
 
 
