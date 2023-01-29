@@ -170,9 +170,10 @@
         <br><br>
         <br><br>
     <section>
-        <h2>Enter a number!</h2>
+        <h2>Count to a number!</h2>
         <input type="number" id="counterInput">
         <button type="button" name="counter" id="counterButton">Count!</button>
+        <button type="button" name="counter" id="resetButtonCount">Reset</button>
         <br><br>
         <label for="counter" id="counterLabel">Counter:</label>
     </section>
@@ -180,8 +181,10 @@
     <br><br>
     <section>
         <h2>Click Counter</h2>
-        <button type="button" name="clickCounter" id="clickButton">Click!</button>
-        <label for="clickCounter" id="clickLabel">0</label>
+        <button type="button" name="clickCounter" id="clickDecrease">Decrease</button>
+        <button type="button" name="clickCounter" id="clickIncrease">Increase</button>
+        <label for="clickCounter" id="clickLabel">0</label><br><br>
+        <button type="button" name="resetCounter" id="resetButton">Reset</button>
     </section>
     <br><br>
     <br><br>
@@ -236,6 +239,45 @@
         <br><br>
         <b id="zodiacResult">Your Zodiac sign is:</b>
     </section>
-    SOMETHING WITH CHECKBOXES isChecked
+    <br><br>
+    <br><br>
+    <section>
+        <h2>Random Number Generator</h2>
+        <b>Input two numbers</b>
+        <br><br>
+        <input type="number" id="minInput">
+        <br><br>
+        <input type="number" id="maxInput">
+        <br><br>
+        <button type="button" id="generateNum">Generate!</button>
+        <label id="labelNum"></label>
+    </section>
+    <br><br><br>
+    <section>
+        <h2>Is the checkbox checked?</h2>
+        <label for="isItChecked" id="isItCheckedLabel">Is the checkbox checked?</label>
+        <input type="checkbox" id="isItChecked">
+        <button id="isItCheckedBtn">Check</button>
+    </section>
+    <br><br><br>
+    <section>
+        <h2>Which radiobutton is checked?</h2>
+        <input type="radio" id="radioOne" name="radioBtns">
+        <label for="radioOne" id="radioLabel1"></label>
+        <br>
+        <input type="radio" id="radioTwo" name="radioBtns">
+        <label for="radioTwo" id="radioLabel2"></label>
+        <br>
+        <input type="radio" id="radioThree" name="radioBtns">
+        <label for="radioThree" id="radioLabel3"></label>
+    </section>
+    <br><br><br>
+    <section>
+        <h2>How many rows & columns of your desired symbol do you want?</h2>
+        <input type="text" id="symbol" placeholder="Enter a symbol">
+        <input type="number" id="numberRows" placeholder="Enter number of rows">
+        <input type="number" id="numberColumns" placeholder="Enter number of columns">
+        <p id="rowsAndColumns"></p>
+    </section>
 </body>
 </html>

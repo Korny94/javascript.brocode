@@ -840,6 +840,12 @@ Operator    Description                 Example     Result
 
     let counterInput = document.getElementById("counterInput");
 
+    const resetButtonCount = document.querySelector("#resetButtonCount");
+
+    resetButtonCount.onclick = function() {
+        counterLabel.innerHTML = "Counter: ";
+    }
+
     counterButton.onclick = function() {
         for (let i = 0; i <= counterInput.value; i++) {
             counterLabel.innerHTML += " " + i + " ";
@@ -849,12 +855,25 @@ Operator    Description                 Example     Result
 
 // Click Counter 
 
-let clickButton = document.getElementById("clickButton");
+let clickButton = document.getElementById("clickIncrease");
 
 let clickLabel = document.getElementById("clickLabel");
 
+const resetButton = document.querySelector("#resetButton");
+
+const decreaseButton = document.querySelector("#clickDecrease");
+
 let clicks = 0;
 
+decreaseButton.onclick = function() {
+    clicks -= 1;
+    clickLabel.innerHTML = clicks;
+}
+
+resetButton.onclick = function() {
+    clicks = 0;
+    clickLabel.innerHTML = "0";
+}
 
 clickButton.onclick = function() {
     clicks += 1;
@@ -879,9 +898,14 @@ letterInput.oninput = function() {
 let resetLetterCounter = document.getElementById("resetLetterCounter");
 
 resetLetterCounter.onclick = function() {
-    letterLabel.innerHTML = keys = 0;
+    keys = 0;
+    letterLabel.innerHTML = keys; 
+    letterInput.value = "";
 }
 
+
+
+// ZODIAC SIGN
 
 
 let Aquarius = document.getElementById("birthday1");
@@ -958,3 +982,141 @@ sagittarius.onclick = function() {
 capricorn.onclick = function() {
     zodiacResult.innerHTML = "Your Zodiac sign is: Capricorn"; 
 }
+
+
+// RANDOM NUMBER GENERATOR
+
+let minNum = document.querySelector("#minInput");
+
+let maxNum = document.querySelector("#maxInput");
+
+const resetNum = document.querySelector("#resetNum");
+
+const generateNum = document.querySelector("#generateNum");
+
+const labelNum = document.querySelector("#labelNum");
+
+generateNum.onclick = function() {
+    minNumber = parseInt(minNum.value);
+    maxNumber = parseInt(maxNum.value);
+    labelNum.innerHTML = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    if (minNumber > maxNumber) {
+        labelNum.innerHTML = Math.floor(Math.random() * (minNumber - maxNumber + 1) + maxNumber);
+    }
+}
+
+
+// IS THE CHECKBOX CHECKED?
+
+const checkedLabel = document.querySelector("#isItCheckedLabel");
+
+const checkedBox = document.querySelector("#isItChecked");
+
+const checkedBtn = document.querySelector("#isItCheckedBtn");
+
+checkedBtn.onclick = function() {
+    if (checkedBox.checked) {
+        checkedLabel.innerHTML = "Yes, it is checked";
+    } else {
+        checkedLabel.innerHTML = "No, it is not checked";
+    }
+};
+
+
+
+// WHICH RADIOBUTTON IS CHECKED?
+
+const radioLabel1 = document.querySelector("#radioLabel1");
+
+const radioLabel2 = document.querySelector("#radioLabel2");
+
+const radioLabel3 = document.querySelector("#radioLabel3");
+
+const radioBtn1 = document.querySelector("#radioOne");
+
+const radioBtn2 = document.querySelector("#radioTwo");
+
+const radioBtn3 = document.querySelector("#radioThree");
+
+radioBtn1.onclick = function() {
+    radioLabel1.innerHTML = "This one is checked!";
+    radioLabel2.innerHTML = "";
+    radioLabel3.innerHTML = "";
+}
+
+radioBtn2.onclick = function() {
+    radioLabel2.innerHTML = "This one is checked!";
+    radioLabel1.innerHTML = "";
+    radioLabel3.innerHTML = "";
+}
+
+radioBtn3.onclick = function() {
+    radioLabel3.innerHTML = "This one is checked!";
+    radioLabel2.innerHTML = "";
+    radioLabel1.innerHTML = "";
+}
+
+
+
+// HOW MANY ROWS & COLUMNS OF YOUR DESIRED SYMBOL DO YOU WANT?
+
+let symbol = document.querySelector("#symbol");
+
+let stringRows = document.querySelector("#numberRows");
+
+let stringColumns = document.querySelector("#numberColumns");
+
+let rowsAndCols = document.querySelector("#rowsAndColumns");
+
+
+
+numberRows.oninput = function() {
+    numberRows = stringRows.value
+    numberColumns = stringColumns.value
+    rowsAndCols.innerHTML = "";
+    if (numberColumns == 0 || symbol.value == "") {
+        rowsAndCols.innerHTML = "";
+    }
+    for (let i = 1; i <= numberRows; i++) {
+        for (let j = 1; j <= numberColumns; j++) {
+            rowsAndCols.innerHTML += j;
+        }
+        rowsAndCols.innerHTML += "<br>";
+    }
+}
+
+
+
+numberColumns.oninput = function() {
+    numberRows = stringRows.value
+    numberColumns = stringColumns.value
+    rowsAndCols.innerHTML = "";
+    if (numberRows == 0 || symbol.value == "") {
+        rowsAndCols.innerHTML = "";
+    }
+    for (let i = 1; i <= numberRows; i++) {
+        for (let j = 1; j <= numberColumns; j++) {
+            rowsAndCols.innerHTML += symbol.value;
+        }
+        rowsAndCols.innerHTML += "<br>";
+    }
+}
+
+symbol.oninput = function() {
+    numberRows = stringRows.value
+    numberColumns = stringColumns.value
+    rowsAndCols.innerHTML = "";
+    if (numberRows == 0 || numberColumns == 0) {
+        rowsAndCols.innerHTML = "";
+    }
+    for (let i = 1; i <= numberRows; i++) {
+        for (let j = 1; j <= numberColumns; j++) {
+            rowsAndCols.innerHTML += symbol.value;
+        }
+        rowsAndCols.innerHTML += "<br>";
+    }
+}
+
+
+
+
