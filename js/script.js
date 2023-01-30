@@ -1119,4 +1119,62 @@ symbol.oninput = function() {
 
 
 
+// NUMBER GUESSING GAME 
+
+const randomNumber = Math.floor(Math.random() * 10 + 1);
+
+const stringGuess = document.querySelector("#numberGuess");
+
+const submitGuess = document.querySelector("#submitGuess");
+
+const answerGuess = document.querySelector("#answerGuess");
+
+const newGame = document.querySelector("#newGame");
+
+let guesses = 0;
+
+
+submitGuess.onclick = function() {
+    numberGuess = parseInt(stringGuess.value);
+    console.log(randomNumber);
+    guesses += 1;
+    if (randomNumber == numberGuess) {
+        answerGuess.innerHTML = "Congratulations! You guessed correctly! It took you " + guesses + " guesses!"
+    } else if (numberGuess > randomNumber) {
+        answerGuess.innerHTML = "Your guess is too big!"
+    } else if (numberGuess < randomNumber) {
+        answerGuess.innerHTML = "Your guess is too small!"
+    }
+}
+
+newGame.onclick = function() {
+    location.reload();
+}
+
+
+
+// TEMPERATURE CONVERSION
+
+const inputStringTemp = document.querySelector("#inputTemp");
+
+const toCelsius = document.querySelector("#toCelsius");
+
+const toFahrenheit = document.querySelector("#toFahrenheit");
+
+const degrees = document.querySelector("#degrees");
+
+
+toCelsius.onclick = function() {
+    inputNumTemp = parseFloat(inputStringTemp.value);
+    celsius = (inputNumTemp - 32) * .5556;
+    degrees.innerHTML = "Temperature: " +  celsius.toLocaleString(undefined, {style: "unit", unit: "celsius"})
+}
+
+toFahrenheit.onclick = function() {
+    inputNumTemp = parseFloat(inputStringTemp.value);
+    fahrenheit = inputNumTemp * 1.8 + 32;
+    degrees.innerHTML = "Temperature: " + fahrenheit.toLocaleString(undefined, {style: "unit", unit: "fahrenheit"})
+}
+
+
 
