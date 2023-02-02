@@ -157,5 +157,35 @@ input[type=color] {
     z-index: 3;
 }
 
+#whiteHeart {
+    margin-top: -6.85rem;
+    margin-left: -8.55rem;
+    position: absolute;
+    scale: .27;
+    z-index: 1;
+}
 
+.noHeart {
+    opacity: 0;
+}
 
+.yesHeart {
+    opacity: 1;
+}
+
+#blackHeart {
+    position: absolute;
+    opacity: 1;
+}
+
+#sectionHearts {
+    display: flex;
+    gap: 3rem;
+}
+
+#iconHeart {
+    width: fit-content;
+    scale: 4.5;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}

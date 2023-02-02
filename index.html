@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d36ab058e7.js" crossorigin="anonymous"></script>
     <script defer src="/js/script.js"></script>
     <title>Document</title>
 </head>
@@ -13,7 +14,7 @@
         <h2 id="myLabel">Enter your name:</h2>
         <input type="text" id="myText">
         <br><br>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submitUsername">Submit</button>
     </section>
     <br>
     <section class="paragraphs">
@@ -303,6 +304,25 @@
         <input type="radio" id="toFahrenheit" name="tempConversion">
         <br><br>
         <label id="degrees">Temperature:</label>
+    </section>
+    <br><br><br>
+    <section>
+        <h2>Toggle Hearts</h2>
+        <div id="sectionHearts">
+            <div>
+                <b>Click on the image heart!</b>
+                <br>
+                <img src="/images/whiteHeart.png" id="whiteHeart">
+                <img src="/images/blackHeart.png" id="blackHeart">
+            </div>
+            <div>
+                <b>Click on the icon heart!</b>
+                <br>
+                <div id="iconHeart">
+                    <i class="far fa-heart"></i>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>

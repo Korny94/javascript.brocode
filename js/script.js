@@ -194,11 +194,17 @@ Operator    Description                 Example     Result
             
         let username;
 
+        let submitUsername = document.querySelector("#submitUsername");
+
         document.getElementById("myText").oninput = function() {
             
             username = document.getElementById("myText").value;
             document.getElementById("myLabel").innerHTML = "Hello " + username;
             console.log(username);
+        }
+
+        submitUsername.onclick = function() {
+            document.getElementById("myLabel").innerHTML = "Why would you hit submit when you see that it already said: Hello " + username + "? Are you stupid?";
         }
 
 
@@ -887,20 +893,19 @@ let letterInput = document.getElementById("letterInput");
 
 let letterLabel = document.getElementById("letterLabel");
 
-let keys = 0;
 
 
 letterInput.oninput = function() {
-    keys += 1;
-    letterLabel.innerHTML = keys;
+    letterValue = letterInput.value;
+    letterWOSpaces = letterValue.replace(/ /g,"");
+    letterLabel.innerHTML = letterWOSpaces.length;
 }
 
 let resetLetterCounter = document.getElementById("resetLetterCounter");
 
 resetLetterCounter.onclick = function() {
-    keys = 0;
-    letterLabel.innerHTML = keys; 
     letterInput.value = "";
+    letterLabel.innerHTML = "0";
 }
 
 
@@ -1175,6 +1180,30 @@ toFahrenheit.onclick = function() {
     fahrenheit = inputNumTemp * 1.8 + 32;
     degrees.innerHTML = "Temperature: " + fahrenheit.toLocaleString(undefined, {style: "unit", unit: "fahrenheit"})
 }
+
+
+
+// TOGGLE HEARTS
+
+    // IMAGE
+
+const whiteHeart = document.querySelector("#whiteHeart");
+
+const blackHeart = document.querySelector("#blackHeart");
+
+whiteHeart.onclick = function() {
+    this.classList.toggle("noHeart");
+}
+
+    // ICON
+
+const iconHeart = document.querySelector("#iconHeart i");
+
+
+iconHeart.addEventListener("click", function() {
+    this.classList.toggle("fa");
+    this.classList.toggle("far");
+});
 
 
 
