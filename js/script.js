@@ -1207,3 +1207,52 @@ iconHeart.addEventListener("click", function() {
 
 
 
+// LOADING & DISCO 
+
+let discoDiv = document.querySelector("#disco");
+
+const loadingDiv = document.querySelector("#loading");
+
+const resetDisco = document.querySelector("#resetDisco");
+
+let clicks1 = 0;
+
+resetDisco.addEventListener("click", function() {
+    discoDiv.style.backgroundColor = "";
+})
+
+
+discoDiv.addEventListener("click", function(event) {
+    clicks1 += 1;
+    loadingDiv.style.display = "block";
+    setTimeout(function() {
+        discoDiv.style.backgroundColor = "red";
+        loadingDiv.style.display = "none";
+
+        function disco() {
+            if (discoDiv.style.backgroundColor = "red") {
+                setTimeout(function() {
+                    discoDiv.style.backgroundColor = "blue";
+                    repeat();
+                }, 500)
+            } else if (discoDiv.style.backgroundColor = "blue") {
+                discoDiv.style.backgroundColor = "red"
+            }
+        }
+        
+        function repeat() {
+            setTimeout(function() {
+                disco()
+            }, 500)
+        }
+
+        repeat();
+
+        disco();
+
+
+
+    }, 2000)
+    
+});
+
