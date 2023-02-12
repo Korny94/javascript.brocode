@@ -1213,46 +1213,350 @@ let discoDiv = document.querySelector("#disco");
 
 const loadingDiv = document.querySelector("#loading");
 
-const resetDisco = document.querySelector("#resetDisco");
-
 let clicks1 = 0;
 
-resetDisco.addEventListener("click", function() {
-    discoDiv.style.backgroundColor = "";
+
+discoDiv.addEventListener("click", function() {
+    clicks1 += 1;
+
+    if (clicks1 % 2 === 0) {
+        return
+    }
+
+    loadingDiv.classList.add("loading");
+
+    const timeout1 = setTimeout(function() {
+        if (clicks1 % 2 === 0) {
+            clearTimeout(timeout1);
+            return
+        }
+
+        loadingDiv.classList.remove("loading");
+        discoDiv.classList.add("redBG");
+
+        const interval1 = setInterval(function() {
+            if (clicks1 % 2 === 0) {
+                discoDiv.classList.add("whiteBG");
+                discoDiv.classList.remove("redBG");
+                discoDiv.classList.remove("blueBG");
+                clearInterval(interval1)
+                return
+            }
+            discoDiv.classList.remove("redBG");
+            discoDiv.classList.add("blueBG");
+        }, 500);
+    
+        const interval2 = setInterval(function() {
+            if (clicks1 % 2 === 0) {
+                
+                clearInterval(interval2)
+                return
+            }
+            discoDiv.classList.remove("blueBG");
+            discoDiv.classList.add("redBG");
+        }, 1000);
+
+    }, 2000);
+});
+
+
+
+
+// Clock Counter
+
+let countUp = document.querySelector("#countUp");
+
+let countDown = document.querySelector("#countDown");
+
+let incrDecr = document.querySelector("#incrDecr");
+
+let startNum = document.querySelector("#startNum");
+
+let milliseconds = document.querySelector("#milliseconds");
+
+let counting = document.querySelector("#counting");
+
+let submitCounting = document.querySelector("#submitCounting");
+
+let resetCounting = document.querySelector("#resetCounting");
+
+let clicks2 = 0;
+
+resetCounting.addEventListener("click", function() {
+    location.reload();
+})
+
+submitCounting.addEventListener("click", function() {
+    clicks2++;
+
+    if (clicks2 > 1) {
+        return
+    } else {
+        incrDecr = Number(incrDecr.value);
+        startNum = Number(startNum.value);
+        milliseconds = Number(milliseconds.value);
+        
+        const intervalId = setInterval(function() {
+            if (clicks2 > 1) {
+                clearInterval(intervalId);
+            }
+            if(countUp.checked){
+                startNum += incrDecr;
+            } else if (countDown.checked) {
+                startNum -= incrDecr;
+            }
+            counting.innerHTML += startNum + " ";
+
+            if (counting.innerHTML.length > 5000) {
+                clearInterval(intervalId);
+            }
+        }, milliseconds)
+    }
 })
 
 
-discoDiv.addEventListener("click", function(event) {
-    clicks1 += 1;
-    loadingDiv.style.display = "block";
-    setTimeout(function() {
-        discoDiv.style.backgroundColor = "red";
-        loadingDiv.style.display = "none";
 
-        function disco() {
-            if (discoDiv.style.backgroundColor = "red") {
-                setTimeout(function() {
-                    discoDiv.style.backgroundColor = "blue";
-                    repeat();
-                }, 500)
-            } else if (discoDiv.style.backgroundColor = "blue") {
-                discoDiv.style.backgroundColor = "red"
-            }
+
+
+// TO-DO LIST
+
+const toDoTasks = document.querySelector("#toDoTasks");
+
+const submitTask = document.querySelector("#submitTask");
+
+const deleteTasks = document.querySelector("#deleteTasks");
+
+let toDoList = document.querySelector("#toDoList");
+
+deleteTasks.addEventListener("click", function() {
+    toDoList.innerHTML = "";
+})
+
+submitTask.addEventListener("click", function() {
+    // toDoList.innerHTML += `<li id="listItemToDo">${toDoTasks.value} <button type="submit" id="toDoButton">Done!</button></li><br>
+    // `
+    // toDoTasks.value = "";
+    // const listItems = document.querySelectorAll("#listItemToDo");
+    // listItems.forEach(function(li) {
+    //     li.addEventListener("click", function() {
+    //         this.classList.toggle("checked");
+    //     })
+    // })
+
+        // OR
+
+    const createLi = document.createElement("li");
+    createLi.innerHTML = `${toDoTasks.value} <button type="submit" id="toDoButton">Done!</button><br>`;
+    createLi.addEventListener("click", function() {
+        this.classList.toggle("checked");
+        console.dir(createLi)
+    })
+    toDoList.append(createLi);
+})
+
+
+
+
+// LENGTH OF SNAKE
+
+const hrLength = document.querySelector("#hrLength");
+
+const selectHrLength = document.querySelector("#selectHrLength");
+
+const selectRangeHr = document.querySelector("#selectRangeHr")
+
+selectHrLength.onchange = function() {
+    hrLength.style.width = selectHrLength.value + "rem"
+}
+
+selectRangeHr.onchange = function() {
+    hrLength.style.width = selectRangeHr.value + "rem"
+}
+
+
+
+
+// HIGHLIGHTED CIRCLES
+
+const selectRangeCircle = document.querySelector("#selectRangeCircle");
+
+const selectIntervalCircles = document.querySelector("#selectIntervalCircles");
+
+const circles = document.querySelector("#circles");
+
+const submitCircle = document.querySelector("#submitCircle");
+
+submitCircle.onclick = function() {
+
+    circles.innerHTML = "";
+
+    for (let i = 1; i <= selectRangeCircle.value; i++) {
+
+        let className = "";
+
+        if(i % selectIntervalCircles.value === 0) {
+            className = "highlight";
         }
-        
-        function repeat() {
-            setTimeout(function() {
-                disco()
-            }, 500)
-        }
 
-        repeat();
+        circles.innerHTML += `<div id="circle" class="${className}">${i}</div>`;
 
-        disco();
+    }
+}
 
 
 
-    }, 2000)
+
+
+// PASSWORD LENGTH CHECKER
+
+const inputPassword = document.querySelector("#inputPassword");
+
+const showPassword = document.querySelector("#showPassword");
+
+const charLength = document.querySelector("#charLength");
+
+
+showPassword.onclick = function() {
+
+    let password = inputPassword.value;
+
+
+    if (password.length >= 8) {
+        inputPassword.type = "text";
+    }
+};
+
+inputPassword.onkeyup = function(event) {
+
+    let password = inputPassword.value;
+
+
+    if (password.length < 8) {
+        inputPassword.type = "password";
+    }
+
+    let passLength = event.target.value.length;
+
+    charLength.innerHTML = passLength;
+
+    if (passLength >= 8) {
+        showPassword.disabled = false;
+    } else {
+        showPassword.disabled = true;
+    }
+}
+
+
+
+
+// ONMOUSEDOWN
+
+const mouseDownBtn = document.querySelector("#mouseDownBtn");
+
+const mouseDownCount = document.querySelector("#mouseDownCount");
+
+const textBoxes = document.querySelector("#textBoxes");
+
+let count6;
+
+let countId;
+
+function mouseDown() {
+    mouseDownBtn.innerHTML = "Release to stop count";
+
+    textBoxes.innerHTML = "";
+
+    count6 = 0;
+
+    mouseDownCount.innerHTML = 0;
+
     
-});
+    countId = setInterval(function() {
+        count6++;
+        mouseDownCount.innerHTML = count6;
+    }, 1000)
+}
+
+function mouseUp() {
+    clearInterval(countId);
+
+    mouseDownBtn.innerHTML = "Press & Hold to count";
+
+    for (let i = 1; i <= count6; i++) {
+        textBoxes.innerHTML += `<div id="textBoxDiv"><input type="text" id="textBox" placeholder="Input ${i}"></input></div>`
+
+    }
+    
+}
+
+mouseDownBtn.onmouseup = mouseUp;
+
+mouseDownBtn.onmousedown = mouseDown;
+
+
+
+
+
+
+
+// GET REQUEST FROM API
+
+const url = "https://api.noroff.dev/api/v1/cat-facts";             // Storing the API in a variable
+
+const resultsContainer = document.querySelector("#results");    // Selecting and storing an element in a variable 
+
+async function getFacts() {                                     // Making an async function
+
+    const response = await fetch(url);                          // Make a promise, with await = wait until you get what you need to make the call
+
+    const results = await response.json();                      // Make a promise, with await = now you get the data that is being returned from the API call
+
+    const facts = results;
+
+    resultsContainer.innerHTML = "";
+
+    for (let i = 0; i < facts.length; i++) {
+        console.log(facts[i].text);
+
+        if (i === 12) {
+            break;
+        }
+
+        resultsContainer.innerHTML += `<div id="result">${facts[i].text}</div>`;
+    }
+
+}
+
+getFacts()
+
+
+
+
+
+
+
+
+// REUSABLE HTML FUNCTION
+
+
+    // TYPES = warning, error and succes
+    // MESSAGE = "Anything you want"
+
+    function createMessage(type = "success", message = "No message") {
+
+        const html = `<div class="message ${type}">${message}</div>`;
+    
+        return html;
+    
+    }
+    
+    const messageContainer = document.querySelector("#messageContainer");
+    
+    const message = createMessage("warning", "This is a ''warning'' type");
+    const message1 = createMessage("success", "This is a ''success'' type");
+    const message2 = createMessage("error", "This is a ''error'' type");
+    
+    messageContainer.innerHTML += message + message1 + message2;
+
+
 

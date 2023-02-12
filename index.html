@@ -324,16 +324,136 @@
             </div>
         </div>
     </section>
-    <br><br><br>
+    <br><br><br><br>
     <section>
-        <h2>Click the square for disco</h2>
+        <h2>Click the square to turn on & off loading & disco</h2>
         <div id="disco">
             <div id="loading">
 
             </div>
         </div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Clock counter</h2>
+        <div id="upDown">
+            <label for="upDown">Count up</label>
+            <input type="radio" id="countUp" name="upDown" checked>
+            <br><br>
+            <label for="upDown">Count down</label>
+            <input type="radio" id="countDown" name="upDown">
+            <br><br>
+            <label for="incrDecr">Increment / Decrement by:</label>
+            <input type="number" id="incrDecr" value="1">
+            <br><br>
+            <label for="startNum">Start from number:</label>
+            <input type="number" id="startNum" value="0">
+            <br><br>
+            <label for="milliseconds">Millisecond between each count:</label>
+            <input type="number" id="milliseconds" value="1000">
+            <br><br>
+            <button type="submit" id="resetCounting">Reset</button>
+            <button type="submit" id="submitCounting">Start</button>
+            <label id="counting">Count: </label>
+        </div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Stop clock game</h2>
+        <p>Stop the clock at target number. Choose which number you want as your target. You can choose how many decimal places you want. You can choose how fast the time goes by.</p>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Detect where the mouse clicked</h2>
+        <p>Similar to the website where you click and a picture pops up of someone pointing to where you clicked</p>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>To-do list</h2>
+        <input type="text" id="toDoTasks">
+        <button type="submit" id="submitTask">Add task</button>
+        <button type="submit" id="deleteTasks">Delete tasks</button>
+        <ul id="toDoList"></ul>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Choose the length of the snake</h2>
+        <select id="selectHrLength">
+            <option value="">Select an option</option>
+            <option value="20">20rem</option>
+            <option value="30">30rem</option>
+            <option value="40">40rem</option>
+            <option value="50">50rem</option>
+        </select>
+        Or
+        <input type="range" min="0" max="60" id="selectRangeHr">
+        <br><br>
+        <hr id="hrLength">
         <br>
-        <button type="reset" id="resetDisco">Reset</button>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Choose how many circles and who will be highlighted</h2>
+        <label>How many circles?</label>
+        <input type="range" min="0" max="50" id="selectRangeCircle">
+        <br><br>
+        <label>Which circles do you want to be highlighted?</label>
+        <select id="selectIntervalCircles">
+            <label></label>
+            <option value="">Select an option</option>
+            <option value="1">Everyone</option>
+            <option value="2">Every 2nd</option>
+            <option value="3">Every 3rd</option>
+            <option value="4">Every 4th</option>
+            <option value="5">Every 5th</option>
+        </select>
+        <br><br>
+        <button type="submit" id="submitCircle">Generate!</button>
+        <div id="circles"></div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Password length checker</h2>
+        <input type="password" id="inputPassword" placeholder="Minimum 8 characters">
+        <button type="submit" id="showPassword" disabled>Show password</button>
+        <br><br>
+        <label>Character length: <span id="charLength">0</span></label>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Hover game</h2>
+        <p>onmouseover the circle stops shrinking and a new circle pops up at a random place, hurry and hover over it before it disappears</p>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Hold down mouse</h2>
+        <button type="submit" id="mouseDownBtn">Press & Hold to count</button>
+        <label id="mouseDownCount">0</label>
+        <br><br>
+        <div id="textBoxes">
+        </div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Password strength tester with rangebar</h2>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>GET Request from API</h2>
+        <h4>URL: https://api.noroff.dev/api/v1/cat-facts</h4>
+        <div id="results">
+            Loading...
+        </div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Reusable HTML Function</h2>
+        <div id="messageContainer"></div>
+    </section>
+    <br><br><br><br>
+    <section>
+        <h2>Escape room / find the hidden key</h2>
+        <p>Try solving the code. scroll 10p, hover over... then click on... etc. chain reaction that leads to the solution</p>
     </section>
 </body>
 </html>
