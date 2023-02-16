@@ -332,3 +332,13 @@ input[type=color] {
     border-color: orange;
     background-color: rgba(100, 0, 0, 0.1);
 }
+
+#searchObjects {
+    display: flex;
+    gap: 1rem;
+}
+
+#searchObjects > * {
+    padding: 1rem;
+    border: 1px solid red;
+}

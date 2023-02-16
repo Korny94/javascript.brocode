@@ -208,6 +208,18 @@ Operator    Description                 Example     Result
         }
 
 
+// GO TO BOTTOM
+
+const goToBottom = document.querySelector("#goBottom");
+
+goToBottom.onclick = function() {
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+
+
+
+
 
 // TYPE CONVERSION
 
@@ -1559,4 +1571,92 @@ getFacts()
     messageContainer.innerHTML += message + message1 + message2;
 
 
+
+
+
+
+
+// SEARCH
+
+const search = document.querySelector("#searchName");
+
+const searchObjects = document.querySelector("#searchObjects");
+
+
+const animals = [
+    {
+        name: "Dexter",
+        age: 3,
+        type: "Dog",
+        isFriendly: true
+    },
+    {
+        name: "Brian",
+        age: 7,
+        type: "Cat",
+        isFriendly: false
+    },
+    {
+        name: "Jeremy",
+        age: 14,
+        type: "Bird",
+        isFriendly: true
+    }
+];
+
+
+
+
+
+console.log(animals)
+
+
+search.onkeyup = function() {
+    searchObjects.innerHTML = "";
+    searchInput = search.value;
+
+        for (let i = 0; i < animals.length; i++) {
+            if (animals[i].name.toLowerCase().includes(searchInput.toLowerCase())) {
+                console.dir(animals[i].name.toLowerCase().includes(searchInput.toLowerCase()))
+                searchObjects.innerHTML += `<div>
+             <h2>Name: ${animals[i].name}</h2>
+             <h3>Age: ${animals[i].age}</h3>
+             <h4>Type: ${animals[i].type}</h4>
+             <h5>${animals[i].isFriendly}</h5>
+         </div>
+         `;
+            } else {
+             searchObjects.innerHTML = "No results";
+            }
+         }
+
+}
+
+
+
+function searchObjects1() {
+
+    for (let i = 0; i < animals.length; i++) {
+
+        if (animals[i].isFriendly) {
+
+            animals[i].isFriendly = "Friendly";
+
+        } else {
+
+            animals[i].isFriendly = "Unfriendly";
+
+        }
+
+        searchObjects.innerHTML += `<div>
+        <h2>Name: ${animals[i].name}</h2>
+        <h3>Age: ${animals[i].age}</h3>
+        <h4>Type: ${animals[i].type}</h4>
+        <h5>${animals[i].isFriendly}</h5>
+    </div>
+    `;
+    }
+}
+
+searchObjects1()
 
