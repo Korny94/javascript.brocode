@@ -1591,16 +1591,16 @@ const animals = [
         isFriendly: true
     },
     {
-        name: "Brian",
-        age: 7,
-        type: "Cat",
-        isFriendly: false
-    },
-    {
         name: "Jeremy",
         age: 14,
         type: "Bird",
         isFriendly: true
+    },
+    {
+        name: "Brian",
+        age: 7,
+        type: "Cat",
+        isFriendly: false
     }
 ];
 
@@ -1608,29 +1608,10 @@ const animals = [
 
 
 
-console.log(animals)
 
 
-search.onkeyup = function() {
-    searchObjects.innerHTML = "";
-    searchInput = search.value;
 
-        for (let i = 0; i < animals.length; i++) {
-            if (animals[i].name.toLowerCase().includes(searchInput.toLowerCase())) {
-                console.dir(animals[i].name.toLowerCase().includes(searchInput.toLowerCase()))
-                searchObjects.innerHTML += `<div>
-             <h2>Name: ${animals[i].name}</h2>
-             <h3>Age: ${animals[i].age}</h3>
-             <h4>Type: ${animals[i].type}</h4>
-             <h5>${animals[i].isFriendly}</h5>
-         </div>
-         `;
-            } else {
-             searchObjects.innerHTML = "No results";
-            }
-         }
 
-}
 
 
 
@@ -1660,3 +1641,23 @@ function searchObjects1() {
 
 searchObjects1()
 
+search.onkeyup = function() {
+    searchObjects.innerHTML = "";
+    searchInput = search.value;
+
+        for (let i = 0; i < animals.length; i++) {
+            if (animals[i].name.toLowerCase().includes(searchInput.toLowerCase())) {
+                console.log(animals[i].name);
+                searchObjects.innerHTML += `<div>
+             <h2>Name: ${animals[i].name}</h2>
+             <h3>Age: ${animals[i].age}</h3>
+             <h4>Type: ${animals[i].type}</h4>
+             <h5>${animals[i].isFriendly}</h5>
+         </div>
+         `;
+            } else {
+             searchObjects.innerHTML = "No results";
+            }
+         }
+
+}
