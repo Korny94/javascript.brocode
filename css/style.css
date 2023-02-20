@@ -333,12 +333,14 @@ input[type=color] {
     background-color: rgba(100, 0, 0, 0.1);
 }
 
-#searchObjects {
+#teamContainer {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-#searchObjects > * {
+#teamContainer > * {
     padding: 1rem;
     border: 1px solid red;
+    border-radius: 1rem;
 }

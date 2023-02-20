@@ -249,7 +249,7 @@ goToBottom.onclick = function() {
 
     // NUMBER TO STRING String(number/var);
 
-        numberedString = 6;
+        let numberedString = 6;
 
         numberedString = String(numberedString);
 
@@ -259,7 +259,7 @@ goToBottom.onclick = function() {
 
     // STRING TO BOOLEAN Boolean(value/var);
 
-        stringBoolean = "";
+        let stringBoolean = "";
 
         stringBoolean = Boolean(stringBoolean);
 
@@ -301,7 +301,7 @@ goToBottom.onclick = function() {
         Math.min(3.9, 8.4, 14);
         // Find the minimum number: Output: 3.9;
 
-        x = Math.PI;
+        let x = Math.PI;
         // x = 3.14159...
 
 
@@ -1580,84 +1580,27 @@ getFacts()
 
 const search = document.querySelector("#searchName");
 
-const searchObjects = document.querySelector("#searchObjects");
+const teamContainer = document.querySelector("#teamContainer");
 
+import teams from "./arrays.js";
 
-const animals = [
-    {
-        name: "Dexter",
-        age: 3,
-        type: "Dog",
-        isFriendly: true
-    },
-    {
-        name: "Jeremy",
-        age: 14,
-        type: "Bird",
-        isFriendly: true
-    },
-    {
-        name: "Brian",
-        age: 7,
-        type: "Cat",
-        isFriendly: false
-    }
-];
+let teamsToRender = teams;
 
-
-
-
-
-
-
-
-
-
-
-
-function searchObjects1() {
-
-    for (let i = 0; i < animals.length; i++) {
-
-        if (animals[i].isFriendly) {
-
-            animals[i].isFriendly = "Friendly";
-
-        } else {
-
-            animals[i].isFriendly = "Unfriendly";
-
-        }
-
-        searchObjects.innerHTML += `<div>
-        <h2>Name: ${animals[i].name}</h2>
-        <h3>Age: ${animals[i].age}</h3>
-        <h4>Type: ${animals[i].type}</h4>
-        <h5>${animals[i].isFriendly}</h5>
-    </div>
-    `;
-    }
+function renderTeams() {
+    teamsToRender.forEach(function(team) {
+        teamContainer.innerHTML += `
+            <div class="team">
+                <h4>${team.full_name}</h4>
+            </div>
+        `;
+    });
 }
 
-searchObjects1()
+renderTeams();
 
 search.onkeyup = function() {
-    searchObjects.innerHTML = "";
-    searchInput = search.value;
-
-        for (let i = 0; i < animals.length; i++) {
-            if (animals[i].name.toLowerCase().includes(searchInput.toLowerCase())) {
-                console.log(animals[i].name);
-                searchObjects.innerHTML += `<div>
-             <h2>Name: ${animals[i].name}</h2>
-             <h3>Age: ${animals[i].age}</h3>
-             <h4>Type: ${animals[i].type}</h4>
-             <h5>${animals[i].isFriendly}</h5>
-         </div>
-         `;
-            } else {
-             searchObjects.innerHTML = "No results";
-            }
-         }
-
+    console.log(event);
 }
+
+
+
