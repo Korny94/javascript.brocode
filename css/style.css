@@ -207,6 +207,11 @@ input[type=color] {
     animation: spin 2000ms linear infinite;
   }
 
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 .whiteBG {
     background-color: white;
 }
@@ -218,11 +223,6 @@ input[type=color] {
 .blueBG {
     background-color: blue;
 }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 
   
 .checked {
@@ -378,3 +378,14 @@ input[type=color] {
     height: 300px;
     background-size: cover;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .formError {
+    color: red;
+    display: none;
+  }

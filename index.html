@@ -488,5 +488,36 @@
     <br><br><br><br>
     <h2>API CALL & GET queryString</h2>
     <div id="apiCall"></div>
+    <br><br><br><br>
+    <h2>API CALL & GET queryString</h2>
+    <div class="container">
+        <select>
+            <option value="">Select a number</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <div class="list"></div>
+    </div>
+    <br><br><br><br>
+    <h2>FORM VALIDATION</h2>
+    <form>
+        <input name="firstName" id="firstName" placeholder="First name (required)">
+        <div class="formError" id="firstNameError">Please enter your first name</div>
+        <input name="lastName" id="lastName" placeholder="Last name (required & min. 4 characters)">
+        <div class="formError" id="lastNameError">Your last name must be at least 4 characters</div>
+        <input name="email" id="email" placeholder="Email (required)">
+        <div class="formError" id="emailError">Please enter a valid email address</div>
+        <button id="formSubmit">Submit</button>
+        <button id="formReset" disabled>Reset</button>
+    </form>
 </body>
 </html>

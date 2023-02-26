@@ -908,8 +908,8 @@ let letterLabel = document.getElementById("letterLabel");
 
 
 letterInput.oninput = function() {
-    letterValue = letterInput.value;
-    letterWOSpaces = letterValue.replace(/ /g,"");
+    const letterValue = letterInput.value;
+    const letterWOSpaces = letterValue.replace(/ /g,"");
     letterLabel.innerHTML = letterWOSpaces.length;
 }
 
@@ -1007,15 +1007,13 @@ let minNum = document.querySelector("#minInput");
 
 let maxNum = document.querySelector("#maxInput");
 
-const resetNum = document.querySelector("#resetNum");
-
 const generateNum = document.querySelector("#generateNum");
 
 const labelNum = document.querySelector("#labelNum");
 
 generateNum.onclick = function() {
-    minNumber = parseInt(minNum.value);
-    maxNumber = parseInt(maxNum.value);
+    const minNumber = parseInt(minNum.value);
+    const maxNumber = parseInt(maxNum.value);
     labelNum.innerHTML = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
     if (minNumber > maxNumber) {
         labelNum.innerHTML = Math.floor(Math.random() * (minNumber - maxNumber + 1) + maxNumber);
@@ -1087,9 +1085,9 @@ let rowsAndCols = document.querySelector("#rowsAndColumns");
 
 
 
-numberRows.oninput = function() {
-    numberRows = stringRows.value
-    numberColumns = stringColumns.value
+stringRows.oninput = function() {
+    const numberRows = stringRows.value
+    let numberColumns = stringColumns.value
     rowsAndCols.innerHTML = "";
     if (numberColumns == 0 || symbol.value == "") {
         rowsAndCols.innerHTML = "";
@@ -1105,8 +1103,8 @@ numberRows.oninput = function() {
 
 
 numberColumns.oninput = function() {
-    numberRows = stringRows.value
-    numberColumns = stringColumns.value
+    const numberRows = stringRows.value
+    const numberColumns = stringColumns.value
     rowsAndCols.innerHTML = "";
     if (numberRows == 0 || symbol.value == "") {
         rowsAndCols.innerHTML = "";
@@ -1120,8 +1118,8 @@ numberColumns.oninput = function() {
 }
 
 symbol.oninput = function() {
-    numberRows = stringRows.value
-    numberColumns = stringColumns.value
+    const numberRows = stringRows.value
+    const numberColumns = stringColumns.value
     rowsAndCols.innerHTML = "";
     if (numberRows == 0 || numberColumns == 0) {
         rowsAndCols.innerHTML = "";
@@ -1152,7 +1150,7 @@ let guesses = 0;
 
 
 submitGuess.onclick = function() {
-    numberGuess = parseInt(stringGuess.value);
+    const numberGuess = parseInt(stringGuess.value);
     console.log(randomNumber);
     guesses += 1;
     if (randomNumber == numberGuess) {
@@ -1182,14 +1180,14 @@ const degrees = document.querySelector("#degrees");
 
 
 toCelsius.onclick = function() {
-    inputNumTemp = parseFloat(inputStringTemp.value);
-    celsius = (inputNumTemp - 32) * .5556;
+    const inputNumTemp = parseFloat(inputStringTemp.value);
+    const celsius = (inputNumTemp - 32) * .5556;
     degrees.innerHTML = "Temperature: " +  celsius.toLocaleString(undefined, {style: "unit", unit: "celsius"})
 }
 
 toFahrenheit.onclick = function() {
-    inputNumTemp = parseFloat(inputStringTemp.value);
-    fahrenheit = inputNumTemp * 1.8 + 32;
+    const inputNumTemp = parseFloat(inputStringTemp.value);
+    const fahrenheit = inputNumTemp * 1.8 + 32;
     degrees.innerHTML = "Temperature: " + fahrenheit.toLocaleString(undefined, {style: "unit", unit: "fahrenheit"})
 }
 
@@ -1620,3 +1618,77 @@ search.onkeyup = function(event) {
 
 
 
+
+
+// FORM VALIDATION
+
+const firstNameForm = document.querySelector("#firstName");
+const firstNameError = document.querySelector("#firstNameError");
+const lastNameForm = document.querySelector("#lastName");
+const lastNameError = document.querySelector("#lastNameError");
+const emailForm = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+const formSubmit = document.querySelector("#formSubmit");
+const formReset = document.querySelector("#formReset");
+const form = document.querySelector("form");
+
+function disableReset() {
+        if (checkLength(firstNameForm.value, 0) || checkLength(lastNameForm.value, 0) || checkLength(email.value, 0)) {
+            formReset.disabled = false;
+        } else {
+            formReset.disabled = true;
+        }
+}
+
+firstNameForm.addEventListener("keyup", disableReset);
+lastNameForm.addEventListener("keyup", disableReset);
+emailForm.addEventListener("keyup", disableReset);
+
+
+formReset.onclick = function() {
+    event.preventDefault()
+    form.reset();
+}
+
+
+
+
+
+formSubmit.onclick = function() {
+    event.preventDefault();
+
+    console.log(event);
+
+    if (checkLength(firstNameForm.value, 0)) {
+        firstNameError.style.display = "none";
+    } else {
+        firstNameError.style.display = "block";
+    }
+
+    if (checkLength(lastNameForm.value, 3)) {
+        lastNameError.style.display = "none";
+    } else {
+        lastNameError.style.display = "block";
+    }
+
+    if (validateEmail(emailForm.value)) {
+        emailError.style.display = "none";
+    } else {
+        emailError.style.display = "block";
+    }
+
+}
+
+function checkLength(value, length) {
+    if (value.trim().length > length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+    }

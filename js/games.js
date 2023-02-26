@@ -1,7 +1,7 @@
 // API CALL & GET QUERYSTRING
 
 
-const key = "?key=46351883e2e9453a8a40fc6b6cb983ea";
+const key = "?key=dfdbb9ccf03946b793f193f9ec243e36";
 
 const apiCall = document.querySelector("#apiCall");
 
@@ -52,6 +52,7 @@ createGameList();
 
 
 const url11 = "https://api.rawg.io/api/games/" + id1 + key;
+console.log(url11)
 
 async function fetchGame() {
     try {
