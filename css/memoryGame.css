@@ -1,0 +1,61 @@
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  border-radius: 10px;
+  background-color: #3f51b5;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+  background-color: #8bc34a;
+  filter: brightness(100%);
+}
+
+.hidden {
+  filter: brightness(0%);
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.turn {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.restart-btn {
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 2rem;
+}
+
+.restart-btn:hover {
+  background-color: #e53935;
+}
